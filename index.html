@@ -1,12 +1,219 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div>1111</div>
-</body>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1">
+    <meta name="description" content="个人博客 前端开发 asurson">
+    <meta name="keywords" content="网页设计, 个人博客, asurson">
+<meta name="baidu-site-verification" content="wjlbzUMXqP" />
+    <link rel="shortcut icon " type="images/x-icon" href="icon/ico.ico">
+    <link rel="stylesheet" type="text/css" href="icon/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/back.js"></script>
+    <title>AsurSon</title>
+    <style>
+        #placehold{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: #fff;
+        }
+        #placehold .odiv{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        #placehold .rotate{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius:50%;
+            box-shadow: 0 3px 0 #666666;
+            animation: rot 1s infinite linear;
+        }
+        @keyframes rot {
+        from{
+                transform: rotate(0deg);
+            }
+        to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var num=0;
+            var img=$('img');
+            img.each(function(i){
+                var $oImg = new Image();
+                    $oImg.onload = function(){
+                        $oImg.onload = null;
+                        num++;
+                         $('.oMath').html(Math.round(num/$('img').length*100)+'%');
+                        if(num>=i){
+                            $('#placehold').fadeOut();
+                        }
+                    }
+                $oImg.src = img[i].src;
+            })
+        })
+    </script>
+  </head>
+  <body>
+      <div id="placehold">
+          <div class="odiv">
+              <span class="oMath">0%</span>
+              <div class="rotate"></div>
+          </div>
+      </div>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AsurSon</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="index.html">首页</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <p>好好学习 天天向上</p>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <h1 class="menu"><i class="iconfont icon-menu"></i>博客内容</h1>
+      </div>
+    </section>
+
+    <section class="boxes">
+      <div class="container">
+        <div class="boxes_container"><h1><a href="content/prototype.html">对于原型链 __proto__ prototype constructor的理解</a></h1></div>
+        <div class="boxes_container"><h1><a href="content/bibao.html">简单理解闭包</a></h1></div>
+        <div class="boxes_container"><h1>内容待更新...</h1></div>
+        <div class="boxes_container"><h1>内容待更新...</h1></div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <h1 class="menu"><i class="iconfont icon-menu"></i>效果展示</h1>
+      </div>
+    </section>
+
+    <section class="boxes">
+      <div class="container show clearfix">
+        <dl>
+          <a href="javascript:void(0);">
+            <dt><img src="img/web1.jpg" alt=""></dt>
+            <dd>暂无</dd>
+          </a>
+        </dl>
+        <dl>
+            <a href="javascript:void(0);">
+                <dt><img src="img/web1.jpg" alt=""></dt>
+                <dd>暂无</dd>
+              </a>
+        </dl>
+        <dl>
+          <a href="snaker/index.html">
+            <dt><img src="img/web1.jpg" alt=""></dt>
+            <dd>简易贪吃蛇</dd>
+          </a>
+        </dl>
+        <dl>
+            <a href="javascript:void(0);">
+                <dt><img src="img/web1.jpg" alt=""></dt>
+                <dd>暂无</dd>
+              </a>
+        </dl>
+        <dl>
+          <a href="javascript:void(0);">
+            <dt><img src="img/web1.jpg" alt=""></dt>
+            <dd>暂无</dd>
+          </a>
+        </dl>
+        <dl>
+          <a href="javascript:void(0);">
+            <dt><img src="img/web1.jpg" alt=""></dt>
+            <dd>暂无</dd>
+          </a>
+        </dl>
+        <dl>
+          <a href="javascript:void(0);">
+            <dt><img src="img/web1.jpg" alt=""></dt>
+            <dd>暂无</dd>
+          </a>
+        </dl>
+        <dl>
+          <a href="javascript:void(0);">
+            <dt><img src="img/web1.jpg" alt=""></dt>
+            <dd>暂无</dd>
+          </a>
+        </dl>
+
+
+
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer_content container clearfix">
+        <div>
+          <h1>社区</h1>
+          <ul>
+            <li><a target="_blank" href="https://juejin.im/">掘金</a></li>
+            <li><a target="_blank" href="https://developer.mozilla.org/en-US/">MDN</a></li>
+            <li><a target="_blank" href="http://www.html-js.com/">前端乱炖</a></li>
+          </ul>
+        </div>
+        <div>
+          <h1>前端路线</h1>
+          <ul>
+            <li><a target="_blank" href="http://zh.learnlayout.com/">学习CSS布局</a></li>
+            <li><a target="_blank" href="http://www.alibuybuy.com/posts/category/it">IT的那些事</a></li>
+            <li><a target="_blank" href="http://tgideas.qq.com/doc/">tgideas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h1>学习指南</h1>
+          <ul>
+            <li><a target="_blank" href="http://github.com/">github</a></li>
+            <li><a target="_blank" href="http://v3.bootcss.com/">bootstrap</a></li>
+            <li><a target="_blank" href="https://segmentfault.com/">segmentfault</a></li>
+          </ul>
+        </div>
+        <div>
+          <h1>关于</h1>
+          <ul>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">广告合作</a></li>
+            <li><a href="#">联系地址</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div id="back"></div>
+  </body>
 </html>
